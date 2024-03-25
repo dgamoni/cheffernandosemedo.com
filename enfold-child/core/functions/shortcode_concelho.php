@@ -78,7 +78,7 @@ function dynamic_select_369_dynamic_options($options, $name, $cf7_key){
 		array_push($concelhos, $opts["CONCELHO"]);
 	}
 	$concelhos = array_unique($concelhos);
-	$options = '<option class="nonval" value="0"></option>';
+	$options = '<option class="nonval" value=""></option>';
 
 
 	  foreach ( $concelhos as $key => $concelho ) {

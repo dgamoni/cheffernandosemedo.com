@@ -9,7 +9,9 @@
 }
 
 @media (max-width: 768px) {
-
+	.home_form_cf7_wrap .wpcf7, #wpcf7-f268-p18-o1 {
+	    padding: 0;
+	}
 }
 
 @media (max-width: 480px) {

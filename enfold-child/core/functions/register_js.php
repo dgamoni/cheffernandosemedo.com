@@ -2,6 +2,13 @@
 function custom_child_scripts() {
 
 
+	// wp_enqueue_style(
+	// 	'pretty-checkbox-css', 
+	// 	CORE_URL . '/css/pretty-checkbox.min.css',
+	// 	array(),
+	// 	rand()
+	// );
+
 	wp_enqueue_style(
 		'custom_core_style', 
 		CORE_URL . '/css/custom_core_style.css',

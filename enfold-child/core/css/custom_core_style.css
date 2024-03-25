@@ -1,4 +1,19 @@
 
+#top input[type="date"] {
+    -webkit-appearance: none;
+    border: 1px solid #e1e1e1;
+    padding: 8px 6px;
+    outline: none;
+    font: 1em "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #777;
+    margin: 0;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 0px;
+}
+
 /* prepare wrapper element */
 div.quant, div.entegra_field {
 /*  display: inline-block;*/
@@ -9,7 +24,7 @@ div.quant, div.entegra_field {
 div.quant::after {
   position: absolute;
   top: 8px;
-  left: 23px;
+  left: 26px;
  /* right: .5em;*/
   transition: all .05s ease-in-out;
  line-height: 22px;
@@ -113,7 +128,9 @@ p.order_form_title {
     font-weight: 600;
 }
 #top .main_color input[type="text"].total_input {
-    width: 130px;
+    /*width: 130px;*/
+        width: auto;
+    max-width: 140px;
         font-family: sans-serif;
         color: #b36429;
 }
@@ -122,7 +139,8 @@ p.order_form_title {
 	    margin-bottom: -5px;
 }
 .total_field::before {
-	content: url('https://tcc.cheffernandosemedo.com/wp-content/uploads/2020/11/basket.png');
+	content: url('../img/basket.png');
+	    margin-right: 10px;
 }
 
 .total_wrap {
@@ -134,7 +152,11 @@ p.order_form_title {
 	border-color: #5b2512;
     border-top: solid 1px;
 	padding-top: 25px;
-    margin-top: 25px;    
+    margin-top: 25px; 
+    margin-bottom: 25px;   
+}
+.home_form_cf7_wrap {
+	margin-bottom: 25px;
 }
 
 .bolo_label {
@@ -160,7 +182,10 @@ div.entegra_field {
 }
 
 .submit_wrap {
-
+	display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
 }
 .enivar_input {
 
@@ -173,9 +198,9 @@ div.entegra_field {
     background-color: #b36529;
     margin: 3px;
     color: white;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
     display: inline-block;
     text-align: center;
     border-radius: 50%;
@@ -198,7 +223,14 @@ div.wpcf7 .ajax-loader {
 }
 .wpcf7 form.invalid .wpcf7-response-output,
 .wpcf7 form.unaccepted .wpcf7-response-output {
-     border: navajowhite;
+     border: none;
+	margin:inherit;
+    padding: inherit;
+    text-align: right;     
+}
+.wpcf7 form.failed .wpcf7-response-output, 
+.wpcf7 form.aborted .wpcf7-response-output {
+    border: none;
 }
  .main_color input[type='submit'] {
     background-color: #915222;
@@ -207,4 +239,82 @@ div.wpcf7 .ajax-loader {
     font-size: 16px;
     border-radius: 8px;
     padding: 12px 82px;
+}
+.none {
+	display: none !important;
+}
+.submit_content {
+	position: relative;
+}
+.main_color input[type='submit']:focus {
+	outline: none;
+}
+.wpcf7-not-valid-tip {
+    margin-top: -20px;
+}
+
+#top .main_color input[type='date'] {
+    border-color: #ebe8e2;
+    background-color: #f8f6f2;
+    color: #963c18;
+    width: 100%;
+}
+#top .main_color input[type='date']:focus {
+	outline: none;
+}
+#top .main_color .wpcf7 input[type="date"],
+#top .main_color .wpcf7 .order_form_part_2 input[type="text"],
+#top .main_color .wpcf7 input[type="email"],
+#top .main_color .wpcf7 input[type="tel"] {
+    border: 1px solid #5b2512;
+    padding: 9px 9px;
+    border-radius: 6px;
+    color: #A86836;
+    height: 36px;
+}
+.order_form_part_2 {
+	display: none;
+}
+#top .main_color .wpcf7 input[type="number"][data-valid='novalid']:focus,
+#top .main_color .wpcf7 input[type="number"][data-valid='novalid'] {
+  border-color: red;
+}
+
+.home_form_cf7_wrap .wpcf7 form .wpcf7-response-output {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    border:none;
+}
+
+/* custom checkbox styling for contact form 7 checkbox */
+.wpcf7 span.wpcf7-list-item {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.politica_wrap {
+	visibility: hidden;
+}
+.order_text_content .wpcf7-not-valid-tip {
+	    /*margin-left: 23px !important;*/
+	        margin-top: 0px;
+}
+#top .main_color .avançar {
+    background-color: #b36529;
+    border-color: #914307;
+    color: #ffffff;
+    border-color: #703000;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 12px 82px;
+}
+.avançar:hover {
+	cursor: pointer;
+}
+.avançar span {
+
+}
+.enivar_input {
+	display: none;
 }

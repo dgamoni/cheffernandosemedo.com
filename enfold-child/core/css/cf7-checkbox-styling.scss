@@ -1,0 +1,58 @@
+.wpcf7-checkbox, .radio {
+  display: inline;
+  margin: 10px 0 0;
+
+  .wpcf7-list-item {
+    display: inline-block;
+
+    input[type=checkbox], input[type=radio] {
+      display: none;
+
+      &:checked + .wpcf7-list-item-label::before {
+        content: "\f0c8";
+        color: $pink;
+        font-size: 12px;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 14px;
+        text-decoration: inherit;
+        text-align: center;
+      }
+    }
+  }
+
+  .wpcf7-list-item-label {
+    display: inline-block;
+    font-family: $primary-font-family;
+    font-size: 14px;
+    font-weight: normal;
+    left: 15px;
+    line-height: 14px;
+    margin: 0 0 15px;
+    position: relative;
+
+    &::before {
+      background: $white;
+      border: 1px solid $pink;
+      border-radius: 3px;
+      content: "";
+      height: 15px;
+      left: -22px;
+      position: absolute;
+      width: 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.radio {
+  .wpcf7-list-item-label {
+    &::before {
+      border-radius: 100%;
+    }
+  }
+} 
