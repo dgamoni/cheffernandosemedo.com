@@ -81,20 +81,64 @@ function dynamic_select_369_dynamic_options($options, $name, $cf7_key){
 	$options = '<option class="nonval" value=""></option>';
 
 
-	  foreach ( $concelhos as $key => $concelho ) {
-	  	$class = str_replace(' ', '_', $concelho);
-	    $options .= '<optgroup class="group_'.$class.'" label="'.$concelho.'">';
-	    foreach ( $csv as $label => $value ) {
-	    	if ( $value["CONCELHO"] == $concelho ) {
-	    		$price = str_replace(',', '.', $value["Delivery price"]);
-	    		$options .= '<option value="'.$price.'">'.$value["FREGUESIA"].'</option>';
-	    	}
+	  // foreach ( $concelhos as $key => $concelho ) {
+	  // 	$class = str_replace(' ', '_', $concelho);
+	  //   $options .= '<optgroup class="group_'.$class.'" label="'.$concelho.'">';
+	  //   foreach ( $csv as $label => $value ) {
+	  //   	if ( $value["CONCELHO"] == $concelho ) {
+	  //   		$price = str_replace(',', '.', $value["Delivery price"]);
+	  //   		$options .= '<option value="'.$price.'">'.$value["FREGUESIA"].'</option>';
+	  //   	}
 	      
-	    }
-	    $options .= '</optgroup>';
-	  }
+	  //   }
+	  //   $options .= '</optgroup>';
+	  // }
 
 
 
   return $options;
+}
+
+add_action( 'wp_ajax_get_delivery_list', 'get_delivery_list' );
+add_action( 'wp_ajax_nopriv_get_delivery_list', 'get_delivery_list' );
+
+function get_delivery_list() {
+
+	$term_id = $_POST['term_id'];
+	//$res['term_id'] = $term_id;
+
+    $csv = array_map('str_getcsv', file( CORE_PATH."/csv/delivery.csv" ));
+    array_walk($csv, function(&$a) use ($csv) {
+      $a = array_combine($csv[0], $a);
+    });
+    array_shift($csv); 
+
+
+    $concelhos = [];
+
+	foreach ($csv as $key => $opts) {
+		array_push($concelhos, $opts["CONCELHO"]);
+	}
+	$concelhos = array_unique($concelhos);
+
+	  foreach ( $concelhos as $key => $concelho ) {
+
+	    foreach ( $csv as $label => $value ) {
+	    	if ( $value["CONCELHO"] == $term_id ) {
+	    		$price = str_replace(',', '.', $value["Delivery price"]);
+	    		//$options .= '<option value="'.$price.'">'.$value["FREGUESIA"].'</option>';
+	    		$res[$label]['price'] = $price;
+	    		$res[$label]['label'] = $value["FREGUESIA"];
+	    	}
+	      
+	    }
+
+	  }
+	  
+	  $res = array_values($res);
+
+
+	echo json_encode( $res );
+	exit;
+
 }

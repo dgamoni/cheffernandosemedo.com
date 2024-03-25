@@ -48,7 +48,7 @@ div.quant:focus-within::after {
 
 /* set the unit abbreviation for each unit class */
 .unidade::after {
-  content: 'unidade';
+  /*content: 'unidade';*/
 }
 .text-5541::before {
     content: '€';
@@ -135,7 +135,7 @@ p.order_form_title {
         color: #b36429;
 }
 .total_field {
-	font-size: 39px;
+	font-size: 36px;
 	    margin-bottom: -5px;
 }
 .total_field::before {
@@ -195,7 +195,8 @@ div.entegra_field {
 }
 .order_paginate span {
 	    font-size: 16px;
-    background-color: #b36529;
+    /*background-color: #b36529;*/
+    background-color: #d8d5d0;
     margin: 3px;
     color: white;
     width: 35px;
@@ -206,11 +207,11 @@ div.entegra_field {
     border-radius: 50%;
 }
 .order_paginate span:hover {
-	background-color: #d8d5d0;
-	cursor: pointer;
+	background-color: #b36529;
+	/*cursor: pointer;*/
 }
 .order_paginate span.active {
-	background-color: #d8d5d0;
+	background-color: #b36529;
 }
 .submit_content {
     display: flex;
@@ -275,8 +276,10 @@ div.wpcf7 .ajax-loader {
 .order_form_part_2 {
 	display: none;
 }
-#top .main_color .wpcf7 input[type="number"][data-valid='novalid']:focus,
-#top .main_color .wpcf7 input[type="number"][data-valid='novalid'] {
+#top .main_color .wpcf7 input[type="text"][data-valid='novalid']:focus,
+#top .main_color .wpcf7 input[type="text"][data-valid='novalid'],
+#top .main_color .wpcf7 select[data-valid='novalid']:focus,
+#top .main_color .wpcf7 select[data-valid='novalid'] {
   border-color: red;
 }
 
@@ -285,6 +288,9 @@ div.wpcf7 .ajax-loader {
     padding: 0;
     text-align: right;
     border:none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 /* custom checkbox styling for contact form 7 checkbox */

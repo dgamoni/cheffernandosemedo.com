@@ -14,7 +14,7 @@
 
     <div class="order_form_label"><label>Quantidade <span class="req">*</span></label></div>
     <div class="quant unidade">
-      [number* number-20 id:unidade min:1 max:100 "1" ]
+      [select* menu-852 id:unidade "1 unidade|1" "2 unidades|2" "3 unidades|3" "4 unidades|4" "5 unidades|5" "6 unidades|6" "7 unidades|7" "8 unidades|8" "9 unidades|9" "10 unidades|10"]
     </div>
 
   </div> <!-- end column1 -->
@@ -38,6 +38,7 @@
     <div class="order_form_label"><label>Freguesia <span class="req">*</span></label></div>
     <div class="order_form_input inputFreguesia ">
       [dynamic_select* dynamic_select-369 id:Freguesia "source:filter"]
+      [hidden dynamic_select-369-label id:Freguesia_label]
     </div>
 
   </div> <!-- end column3 -->
@@ -85,11 +86,11 @@
   <div class="order_form_content flex_column av_one_third  flex_column_div av-zero-column-padding ">
     <div class="order_form_label"><label>NIF <span class="req">*</span></label></div>
     <div class="order_form_input inputdate">
-      [number* number-399 id:nif class:nif_input min:1]
+      [text* number-399 id:nif class:nif_input]
     </div>
     <div class="order_form_label"><label>Código Postal <span class="req">*</span></label></div>
     <div class="order_form_input inputdate">
-      [number* number-3991 id:postal class:postal_input min:1]
+      [text* number-3991 id:postal class:postal_input]
     </div>
     <div class="order_form_label"><label>Email <span class="req">*</span></label></div>
     <div class="order_form_input inputdate">
@@ -99,7 +100,7 @@
 </div> <!--end part2 -->
 
 <div class="order_form_footer flex_column">
-  <div class="politica_wrap flex_column av_three_fourth flex_column_div av-zero-column-padding first">
+  <div class="politica_wrap politica_wrap_p1 flex_column av_three_fourth flex_column_div av-zero-column-padding first">
     <div class="order_text_content">[acceptance acceptance-715 class:potitica_input]Aceito ser contactado por telefone e email no âmbito desta encomenda, assim como receber comunicações de marketing por e-mail sobre novidades e promoções The Cookie Cake e entendo que os meus dados pessoais serão tratados de acordo com a Política de Privacidade da The Cookie Cake, podendo retirar o meu consentimento em qualquer momento.[/acceptance]</div>
     <div class="order_text_content">[acceptance acceptance-7152 class:potitica_input2]Aceito os termos e condiçoes do site The Cookie Cake e declaro que li e concordo com a Política de Privacidade e consinto com o processamento dos meus dados nas condições ali descritas[/acceptance]</div>
   </div>

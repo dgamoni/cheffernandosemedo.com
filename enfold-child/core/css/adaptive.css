@@ -1,20 +1,66 @@
 
 
+
+
+
 @media (max-width: 1200px) {
 
+
+
 }
+
+
 
 @media (max-width: 998px) {
 
+
+
 }
 
+
+
 @media (max-width: 768px) {
+
 	.home_form_cf7_wrap .wpcf7, #wpcf7-f268-p18-o1 {
+
 	    padding: 0;
+
 	}
+	.politica_wrap_p1 {
+		display: none;
+	}
+	.encomendas_main_column {
+		    padding: 50px 15px !important;
+	}
+
+	.responsive #top #wrap_all #encomendas div.container {
+	    width: 90%;
+	    max-width: 90%;
+	}
+	.responsive #top #wrap_all .order_form_content.flex_column {
+		margin-bottom: 0;
+	}	
 }
+
+
 
 @media (max-width: 480px) {
 
+	.encomendas_main_column {
+		    padding: 50px 15px !important;
+	}
+
+	.responsive #top #wrap_all #encomendas div.container {
+	    width: 90%;
+	    max-width: 90%;
+	}
+	.responsive #top #wrap_all .order_form_content.flex_column {
+		margin-bottom: 0;
+	}
+	.politica_wrap_p1 {
+		display: none;
+	}
 }
+
+
 
